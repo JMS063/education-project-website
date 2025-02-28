@@ -1,0 +1,179 @@
+body{
+    background-color:rgb(242, 242, 242); ;
+}
+
+.header {
+    display: flex;
+    align-items: center;  /* Align items vertically */
+    gap: 10px;  /* Space between logos */
+}
+
+#logo {
+    width: 100px;  /* Adjust as needed */
+    height: auto;  /* Maintain aspect ratio */
+}
+
+#second-logo {
+    width: 150px;  /* Adjust as needed */
+    height: auto;  /* Maintain aspect ratio */
+}
+
+
+/* Code below is to edit the apperance of the Navigation bar*/
+nav {
+    background-color: rgba(209, 31, 45, 0.95); /* Adjust the last value (0.0 - 1.0) for transparency */
+    text-align: right;
+  }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+li {
+  float: none;
+  display: inline-block;
+}
+
+a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#main_theme_photo{
+  width: 50%;
+  display: block;
+  margin: auto;
+}
+
+
+.slideshow-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+}
+
+.photogallery {
+    display: none;
+}
+
+img {
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Fade animation */
+.fade {
+    animation: fadeEffect 1.5s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+
+/* Dots */
+.slides {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 5px;
+    background-color: #bbb;
+    display: inline-block;
+    border-radius: 50%;
+    transition: background-color 0.6s ease;
+}
+
+.slides.active {
+    background-color: #717171;
+}
+
+
+footer {
+    background-color: rgba(209, 31, 45, 0.9); /* Slight transparency */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.footer-left, .footer-right {
+    margin: 10px;
+}
+
+.footer-left h3, .footer-right h3 {
+    font-size: 20px;
+}
+
+.social-icon {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    text-decoration: underline;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Space between left and right sections */
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.footer-right {
+    text-align: center;
+}
+
+.footer-image {
+    width: 120px;  /* Adjust size */
+    height: auto;  /* Maintain aspect ratio */
+    margin-top: 10px;
+    border-radius: 10px; /* Optional: rounded corners */
+}
