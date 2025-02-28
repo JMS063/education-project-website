@@ -1,11 +1,14 @@
-body{
-    background-color:rgb(242, 242, 242); ;
+/* General Styles */
+body {
+    background-color: rgb(242, 242, 242);
+    font-family: Arial, sans-serif;
 }
 
-.header {
+header {
     display: flex;
-    align-items: center;  /* Align items vertically */
-    gap: 10px;  /* Space between logos */
+    justify-content: space-between; /* Space between logos */
+    align-items: center;
+    padding: 10px 20px;
 }
 
 #logo {
@@ -19,42 +22,39 @@ body{
 }
 
 
-/* Code below is to edit the apperance of the Navigation bar*/
+/* Navigation Bar */
 nav {
-    background-color: rgba(209, 31, 45, 0.95); /* Adjust the last value (0.0 - 1.0) for transparency */
-    text-align: right;
-  }
+    background-color: rgba(209, 31, 45, 0.95);
+    text-align: center;
+    padding: 10px 0;
+}
 
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 li {
-  float: none;
-  display: inline-block;
+    display: inline-block;
+    margin-right: 20px;
 }
 
 a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    font-size: 16px;
 }
 
-#main_theme_photo{
-  width: 50%;
-  display: block;
-  margin: auto;
+a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
-
+/* Slideshow Styles */
 .slideshow-container {
     position: relative;
-    max-width: 800px;
+    max-width: 100%;
     margin: auto;
 }
 
@@ -62,104 +62,56 @@ a {
     display: none;
 }
 
-img {
-    vertical-align: middle;
-    width: 100%;
+/* Slideshow Styles */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    display: flex;            /* Add this to use flexbox */
+    justify-content: center;  /* Horizontally center content */
+    align-items: center;      /* Vertically center content */
 }
 
-/* Next & previous buttons */
+.photogallery {
+    display: none;
+}
+
+img {
+    width: 100%;  /* Responsive width */
+    max-width: 1000px;  /* Limit max size to 1000px */
+    height: auto;  /* Maintain aspect ratio */
+    vertical-align: middle;
+}
+
+
+/* Next & Previous Buttons */
 .prev, .next {
-    cursor: pointer;
     position: absolute;
     top: 50%;
-    width: auto;
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
-    margin-top: -22px;
+    cursor: pointer;
     color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 3px;
-    background: rgba(0, 0, 0, 0.5);
 }
 
-.next {
-    right: 0;
-}
+.next { right: 0; }
 
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Fade animation */
-.fade {
-    animation: fadeEffect 1.5s;
-}
-
-@keyframes fadeEffect {
-    from {opacity: 0.4}
-    to {opacity: 1}
-}
-
-/* Dots */
-.slides {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 5px;
-    background-color: #bbb;
-    display: inline-block;
-    border-radius: 50%;
-    transition: background-color 0.6s ease;
-}
-
-.slides.active {
-    background-color: #717171;
-}
-
-
+/* Footer Styles */
 footer {
-    background-color: rgba(209, 31, 45, 0.9); /* Slight transparency */
+    background-color: rgba(209, 31, 45, 0.9);
     color: white;
     padding: 20px 0;
     text-align: center;
     position: relative;
-    bottom: 0;
-    width: 100%;
 }
 
 .footer-container {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.footer-left, .footer-right {
-    margin: 10px;
-}
-
-.footer-left h3, .footer-right h3 {
-    font-size: 20px;
-}
-
-.social-icon {
-    display: block;
-    color: white;
-    text-decoration: none;
-    margin: 5px 0;
-    transition: 0.3s;
-}
-
-.social-icon:hover {
-    text-decoration: underline;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between; /* Space between left and right sections */
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     max-width: 1000px;
@@ -167,13 +119,74 @@ footer {
     padding: 20px;
 }
 
-.footer-right {
-    text-align: center;
+.footer-left, .footer-right {
+    margin: 10px;
 }
 
 .footer-image {
-    width: 120px;  /* Adjust size */
-    height: auto;  /* Maintain aspect ratio */
+    max-width: 100%;
+    width: 120px;
     margin-top: 10px;
-    border-radius: 10px; /* Optional: rounded corners */
+    border-radius: 10px;
+}
+
+/* Responsive Design (Media Queries) */
+
+/* For tablets and small devices (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Adjust the header layout */
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Stack navigation items vertically */
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
+
+    /* Adjust slideshow size */
+    .slideshow-container {
+        max-width: 100%;
+    }
+
+    /* Center the footer content */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-left, .footer-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Adjust footer image */
+    .footer-image {
+        width: 100px;
+    }
+}
+
+/* For mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Adjust the font sizes for smaller screens */
+    a {
+        font-size: 14px;
+    }
+
+    /* Slideshow images and text */
+    .slideshow-container img {
+        max-width: 100%;
+    }
+
+    .footer-image {
+        width: 80px;  /* Make the footer image smaller */
+    }
 }
