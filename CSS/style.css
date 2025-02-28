@@ -21,6 +21,16 @@ header {
     height: auto;  /* Maintain aspect ratio */
 }
 
+#third-logo-container {
+    display: flex;
+    justify-content: flex-end; /* Align the image to the right */
+}
+
+#third-logo {
+    width: 400px;  /* Adjust as needed */
+    height: auto;  /* Maintain aspect ratio */
+}
+
 
 /* Navigation Bar */
 nav {
